@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :campaign do
-    name { "MyString" }
-    player_num { 1 }
-    themes { "MyString" }
+    name { Faker::Games::DnD.title_name }
+    player_num { 4 }
+    themes { "Fantasy" }
   end
 end
