@@ -22,6 +22,9 @@ This is the back-end repository of this app. Please see [HERE](https://github.co
 When branching on this repo please use the conventions of `sprint#_name_feature`
 
 ## API Usage
+- This app uses:
+  - [OpenAI API](https://platform.openai.com/)
+  - [D&D 5e SRD API](https://5e-bits.github.io/docs/) 
 ## System dependencies
 
 ## Configuration
