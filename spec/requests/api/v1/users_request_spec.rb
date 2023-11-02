@@ -24,4 +24,21 @@ describe "Users API" do
 
     # add more robust testing!
   end
+
+  it "can create a new User" do
+    user_params = ({
+      username: "hiro_protagonist",
+      email: "hiro@gmail.com",
+      password: "password"
+    })
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    post "/api/v1/users", headers: headers, params: JSON.generate(user: user_params)
+
+    new_user = User.last
+
+    expect(response).to be_successful
+
+    # add more robust testing!
+  end
 end
