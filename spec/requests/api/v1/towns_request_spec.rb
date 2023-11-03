@@ -14,4 +14,14 @@ RSpec.describe "Towns API" do
 
     # more testing here!
   end
+
+  it "can get a single town" do
+    get "/api/v1/towns/#{@towns.first.id}"
+
+    expect(response).to be_successful
+
+    town = JSON.parse(response.body)
+
+    # mroe testing here!
+  end
 end

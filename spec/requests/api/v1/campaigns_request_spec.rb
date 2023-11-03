@@ -16,9 +16,9 @@ describe "Campaigns API" do
   end
 
   it "can get a single Campaign" do
-    get "/api/v1/campaigns/#{@campaign1.id}"
+    get "/api/v1/campaigns/#{@campaigns.first.id}"
 
-    campaign1 = JSON.parse(response.body, symbolize_names: true)
+    campaign = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to be_successful
 
