@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :campaigns, only: [:index, :show]
       resources :users, only: [:index, :show, :create]
-      resources :towns, only: [:index, :show]
+      resources :towns, only: [:index, :show, :create]
     end
   end
 end
