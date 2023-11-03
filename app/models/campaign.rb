@@ -4,4 +4,5 @@ class Campaign < ApplicationRecord
   validates :themes, presence: true
 
   belongs_to :user
+  has_many :towns
 end
