@@ -8,6 +8,16 @@ class Api::V1::TownsController < ApplicationController
   end
 
   def create
-    new_town = CreationFacade.new.new_town(params[:message])
+    poro = CreationFacade.new.new_town(params[:message])
+    town_data = {
+      name: poro.name,
+      description: poro.description,
+      leadership: poro.leadership,
+      shops: poro.shops,
+      taverns: poro.taverns,
+      campaign_id: params[:campaign_id]
+    }
+
+    render json: Town.create(town_data)
   end
 end

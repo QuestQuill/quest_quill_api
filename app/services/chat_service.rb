@@ -18,7 +18,7 @@ class ChatService
   def generate_fantasy_object(message)
     payload = {
       model: "gpt-3.5-turbo",
-      max_tokens: 100,
+      max_tokens: 300,
       messages: [
         {
           role: "system",
