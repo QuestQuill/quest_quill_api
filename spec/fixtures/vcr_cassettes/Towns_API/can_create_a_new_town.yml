@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","max_tokens":100,"messages":[{"role":"system","content":"You
+        are a helpful assistant."},{"role":"user","content":"Create a fantasy town"}]}'
+    headers:
+      Authorization:
+      - Bearer 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
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 03 Nov 2023 23:51:42 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-a2zw6rfoualiqgcougwcfbw9
+      Openai-Processing-Ms:
+      - '8695'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89884'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 76ms
+      X-Request-Id:
+      - 2b49569a5f00aed145e6a217df37e299
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 820886a0c94e2c9f-DFW
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8GyEnnjz1yWthXPelTYckL5O5lINE",
+          "object": "chat.completion",
+          "created": 1699055493,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Welcome to the mystical town of Aurelia! Nestled in a secluded valley, Aurelia is a land of breathtaking beauty and enchantment. With its vibrant population and magical atmosphere, it is a haven where dreams come true.\n\nAs you enter Aurelia, you are greeted by towering, iridescent Crystal Trees that illuminate the town with a gentle glow. The air is perfumed with the scent of enchanted flowers, their petals sparkling with tiny flecks of stardust.\n\nThe heart of the town"
+              },
+              "finish_reason": "length"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 21,
+            "completion_tokens": 100,
+            "total_tokens": 121
+          }
+        }
+  recorded_at: Fri, 03 Nov 2023 23:51:41 GMT
+recorded_with: VCR 6.2.0

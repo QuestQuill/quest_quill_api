@@ -8,12 +8,6 @@ class Api::V1::TownsController < ApplicationController
   end
 
   def create
-    render json: Town.create!(town_params)
-  end
-
-  private
-
-  def town_params
-    params.require(:town).permit(:name, :description, :leadership, :taverns, :shops, :campaign_id)
+    new_town = CreationFacade.new.new_town(params[:message])
   end
 end

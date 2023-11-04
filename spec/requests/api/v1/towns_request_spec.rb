@@ -25,21 +25,17 @@ RSpec.describe "Towns API" do
     # mroe testing here!
   end
 
-  it "can create a new town" do
-    town_params = ({
-      name: "Fort Gulbrand",
-      description: "An old Dwarven fortress resting at the foot of the mighty Muhlorand mountains. This fortress once was the primary Western outpost of a long extinct dwarven kingdom, but now is home to an assortment of races and characters. The cities high walls and impecable defenses make it a frequent stop for travels moving farther West to resupply and find refuge.",
-      leadership: "Stoic the Vast",
-      taverns: "The Seven Drunken Knights",
-      shops: "Flight and Fancy: A local clothier who sometimes sells exceptional pieces of cloth magic items, anything from leather gloves, to silk scarves.",
-      campaign_id: @campaigns.first.id
-    })
-    headers = {"CONTENT_TYPE" => "application/json"}
+  it "can create a new town", :vcr do
 
-    post "/api/v1/towns", headers: headers, params: JSON.generate(town: town_params)
+    headers = {"CONTENT_TYPE" => "application/json"}
+    params = {message: "Create a fantasy town"}
+
+    post "/api/v1/towns", headers: headers, params: JSON.generate(params)
 
     new_town = Town.last
-    
-    expect(response).to be_successful    
+
+    expect(response).to be_successful   
+
+    # add more testing!
   end
 end
