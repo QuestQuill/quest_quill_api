@@ -5,8 +5,9 @@ http_interactions:
     uri: https://api.openai.com/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"gpt-3.5-turbo","max_tokens":100,"messages":[{"role":"system","content":"You
-        are a helpful assistant."},{"role":"user","content":"Create a fantasy town"}]}'
+      string: '{"model":"gpt-3.5-turbo","max_tokens":300,"messages":[{"role":"system","content":"You
+        are a helpful assistant."},{"role":"user","content":"create a new fantasy
+        town with the following unique attributes:\n        name:\n        description:\n        leadership:\n        shops:\n        taverns:"}]}'
     headers:
       Authorization:
       - Bearer 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
@@ -24,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 03 Nov 2023 23:51:42 GMT
+      - Sat, 04 Nov 2023 03:24:22 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -40,7 +41,7 @@ http_interactions:
       Openai-Organization:
       - user-a2zw6rfoualiqgcougwcfbw9
       Openai-Processing-Ms:
-      - '8695'
+      - '29734'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -52,44 +53,44 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '3499'
       X-Ratelimit-Remaining-Tokens:
-      - '89884'
+      - '89653'
       X-Ratelimit-Reset-Requests:
       - 17ms
       X-Ratelimit-Reset-Tokens:
-      - 76ms
+      - 231ms
       X-Request-Id:
-      - 2b49569a5f00aed145e6a217df37e299
+      - 30bd0cc901004406b0ae92d8b9247d0c
       Cf-Cache-Status:
       - DYNAMIC
       Server:
       - cloudflare
       Cf-Ray:
-      - 820886a0c94e2c9f-DFW
+      - 8209bda4ede83abe-DFW
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8GyEnnjz1yWthXPelTYckL5O5lINE",
+          "id": "chatcmpl-8H1YGIcnb3kVrDiL7jwUoaqVxrfNf",
           "object": "chat.completion",
-          "created": 1699055493,
+          "created": 1699068232,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "Welcome to the mystical town of Aurelia! Nestled in a secluded valley, Aurelia is a land of breathtaking beauty and enchantment. With its vibrant population and magical atmosphere, it is a haven where dreams come true.\n\nAs you enter Aurelia, you are greeted by towering, iridescent Crystal Trees that illuminate the town with a gentle glow. The air is perfumed with the scent of enchanted flowers, their petals sparkling with tiny flecks of stardust.\n\nThe heart of the town"
+                "content": "Name: Eldrith Haven\n\nDescription: Eldrith Haven is a captivating fantasy town nestled within a lush, enchanted forest. The town is known for its ethereal atmosphere and magical aura, making it a popular destination for adventurers and mystics alike. It is said that the very air in Eldrith Haven is imbued with powerful energies, giving rise to extraordinary events and encounters.\n\nLeadership: Eldrith Haven is governed by an ancient council known as the Circle of Elders. Composed of wise and skilled individuals from various magical disciplines, the council ensures the town's prosperity while maintaining a delicate balance between the natural world and the supernatural realm. The council's guidance is often sought in matters of magical disputes, mystical artifacts, and the preservation of the forest's harmony.\n\nShops: The streets of Eldrith Haven are lined with mystical shops, brimming with enchanting goods and wares. These shops are known for their rare and unique items, such as glowing crystals, enchanted artifacts, potions, spellbooks, and trinkets that hold magical properties. Visitors can find everything they need to enhance their magical abilities or embark on mystical quests.\n\nTaverns: Eldrith Haven is home to several taverns, each with its own distinctive atmosphere and magical ambiance. The Whispering Oak is a tavern filled with the soft murmurs of secrets and hidden knowledge, making it a popular gathering place for scholars and magic enthusiasts. The Mystic's Brew is a vibrant tavern known for its"
               },
               "finish_reason": "length"
             }
           ],
           "usage": {
-            "prompt_tokens": 21,
-            "completion_tokens": 100,
-            "total_tokens": 121
+            "prompt_tokens": 44,
+            "completion_tokens": 300,
+            "total_tokens": 344
           }
         }
-  recorded_at: Fri, 03 Nov 2023 23:51:41 GMT
+  recorded_at: Sat, 04 Nov 2023 03:24:22 GMT
 recorded_with: VCR 6.2.0
