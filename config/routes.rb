@@ -4,9 +4,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :campaigns, only: [:index, :show]
-      resources :users, only: [:index, :show, :create]
-      resources :towns, only: [:index, :show, :create]
+      resources :users, only: [:index, :show, :create] do
+        resources :campaigns, only: [:index, :show] do
+          resources :towns, only: [:index, :show, :create]
+        end
+      end
     end
   end
 end

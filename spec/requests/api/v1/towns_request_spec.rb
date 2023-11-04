@@ -6,7 +6,7 @@ RSpec.describe "Towns API" do
   end
 
   it "can get a list of all towns" do
-    get '/api/v1/towns'
+    get "/api/v1/users/#{@users.first.id}/campaigns/#{@campaigns.first.id}/towns"
 
     expect(response).to be_successful
 
@@ -16,7 +16,7 @@ RSpec.describe "Towns API" do
   end
 
   it "can get a single town" do
-    get "/api/v1/towns/#{@towns.first.id}"
+    get "/api/v1/users/#{@users.first.id}/campaigns/#{@campaigns.first.id}/towns/#{@towns.first.id}"
 
     expect(response).to be_successful
 
@@ -28,14 +28,28 @@ RSpec.describe "Towns API" do
   it "can create a new town", :vcr do
 
     headers = {"CONTENT_TYPE" => "application/json"}
-    params = {message: "Create a fantasy town"}
+    params = {
+      message: 
+        "create a new fantasy town with the following unique attributes:
+        name:
+        description:
+        leadership:
+        shops:
+        taverns:",
+      campaign: @campaigns.first.id
+    }
 
-    post "/api/v1/towns", headers: headers, params: JSON.generate(params)
+
+    post "/api/v1/users/#{@users.first.id}/campaigns/#{@campaigns.first.id}/towns", headers: headers, params: JSON.generate(params)
 
     new_town = Town.last
 
     expect(response).to be_successful   
-
-    # add more testing!
+    
+    expect(new_town.name).to be_a String
+    expect(new_town.description).to be_a String
+    expect(new_town.leadership).to be_a String
+    expect(new_town.shops).to be_a String
+    expect(new_town.taverns).to be_a String
   end
 end
