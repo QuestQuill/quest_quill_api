@@ -24,4 +24,22 @@ describe "Campaigns API" do
 
     # add more robust testing!
   end
+
+  it "can create a new Campaign" do
+    campaign_params = {
+      name: "Once upon a time",
+      themes: "Fantasy",
+      player_num: 4,
+      user: @users.first.id
+    }
+    
+    post "/api/v1/users/#{@users.first.id}/campaigns", params: campaign_params
+
+    new_campaign = Campaign.last
+
+    expect(new_campaign.name).to eq("Once upon a time")
+    expect(new_campaign.themes).to eq("Fantasy")
+    expect(new_campaign.player_num).to eq 4
+    expect(new_campaign.user_id).to eq(@users.first.id)
+  end
 end
