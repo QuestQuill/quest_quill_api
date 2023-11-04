@@ -13,7 +13,7 @@ RSpec.describe 'User Create', type: :request do
     })
     headers = {"CONTENT_TYPE" => "application/json"}
 
-    post "/api/v1/users", headers: headers, params: JSON.generate(user_params)
+    post "/api/v1/users/", headers: headers, params: JSON.generate(user_params)
 
     new_user = User.last
 

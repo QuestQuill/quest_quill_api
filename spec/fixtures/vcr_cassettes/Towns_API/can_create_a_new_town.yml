@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","max_tokens":300,"messages":[{"role":"system","content":"You
+        are a helpful assistant."},{"role":"user","content":"create a new fantasy
+        town with the following unique attributes:\n        name:\n        description:\n        leadership:\n        shops:\n        taverns:"}]}'
+    headers:
+      Authorization:
+      - Bearer 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
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 04 Nov 2023 03:24:22 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-a2zw6rfoualiqgcougwcfbw9
+      Openai-Processing-Ms:
+      - '29734'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89653'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 231ms
+      X-Request-Id:
+      - 30bd0cc901004406b0ae92d8b9247d0c
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8209bda4ede83abe-DFW
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8H1YGIcnb3kVrDiL7jwUoaqVxrfNf",
+          "object": "chat.completion",
+          "created": 1699068232,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Name: Eldrith Haven\n\nDescription: Eldrith Haven is a captivating fantasy town nestled within a lush, enchanted forest. The town is known for its ethereal atmosphere and magical aura, making it a popular destination for adventurers and mystics alike. It is said that the very air in Eldrith Haven is imbued with powerful energies, giving rise to extraordinary events and encounters.\n\nLeadership: Eldrith Haven is governed by an ancient council known as the Circle of Elders. Composed of wise and skilled individuals from various magical disciplines, the council ensures the town's prosperity while maintaining a delicate balance between the natural world and the supernatural realm. The council's guidance is often sought in matters of magical disputes, mystical artifacts, and the preservation of the forest's harmony.\n\nShops: The streets of Eldrith Haven are lined with mystical shops, brimming with enchanting goods and wares. These shops are known for their rare and unique items, such as glowing crystals, enchanted artifacts, potions, spellbooks, and trinkets that hold magical properties. Visitors can find everything they need to enhance their magical abilities or embark on mystical quests.\n\nTaverns: Eldrith Haven is home to several taverns, each with its own distinctive atmosphere and magical ambiance. The Whispering Oak is a tavern filled with the soft murmurs of secrets and hidden knowledge, making it a popular gathering place for scholars and magic enthusiasts. The Mystic's Brew is a vibrant tavern known for its"
+              },
+              "finish_reason": "length"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 44,
+            "completion_tokens": 300,
+            "total_tokens": 344
+          }
+        }
+  recorded_at: Sat, 04 Nov 2023 03:24:22 GMT
+recorded_with: VCR 6.2.0

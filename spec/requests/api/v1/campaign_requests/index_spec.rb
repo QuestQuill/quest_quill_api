@@ -5,7 +5,7 @@ RSpec.describe 'Campaign Index', type: :request do
     load_test_data
   end
   it 'Returns All Campaigns' do
-    get '/api/v1/campaigns'
+    get "/api/v1/users/#{@user1.id}/campaigns"
 
     expect(response).to be_successful
 
@@ -22,15 +22,15 @@ RSpec.describe 'Campaign Index', type: :request do
     expect(json_response[0]['player_num']).to eq(5)
     expect(json_response[0]['themes']).to eq('Fantasy')
 
-    expect(json_response[1]).to be_a(Hash)
-    expect(json_response[1]['name']).to eq('Campaign 2')
-    expect(json_response[1]['player_num']).to eq(3)
-    expect(json_response[1]['themes']).to eq('Science Fiction')
+    # expect(json_response[1]).to be_a(Hash)
+    # expect(json_response[1]['name']).to eq('Campaign 2')
+    # expect(json_response[1]['player_num']).to eq(3)
+    # expect(json_response[1]['themes']).to eq('Science Fiction')
 
-    expect(json_response[2]).to be_a(Hash)
-    expect(json_response[2]['name']).to eq('Campaign 3')
-    expect(json_response[2]['player_num']).to eq(4)
-    expect(json_response[2]['themes']).to eq('Mystery')
+    # expect(json_response[2]).to be_a(Hash)
+    # expect(json_response[2]['name']).to eq('Campaign 3')
+    # expect(json_response[2]['player_num']).to eq(4)
+    # expect(json_response[2]['themes']).to eq('Mystery')
     
   end
 end

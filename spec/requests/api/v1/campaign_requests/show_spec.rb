@@ -5,7 +5,7 @@ RSpec.describe 'Campaign Show', type: :request do
     load_test_data
   end
   it 'Returns Campaign By ID' do
-    get "/api/v1/campaigns/#{@campaign1.id}"
+    get "/api/v1/users/#{@user1.id}/campaigns/#{@campaign1.id}"
 
     campaign1 = JSON.parse(response.body, symbolize_names: true)
 
