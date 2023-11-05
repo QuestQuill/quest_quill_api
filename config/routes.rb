@@ -8,7 +8,8 @@ Rails.application.routes.draw do
         resources :campaigns, only: [:index, :show] do
           resources :towns, only: [:index, :show, :create]
         end
+        get 'search', to: 'users/users_search#search', on: :collection
       end
     end
-  end
+  end  
 end
