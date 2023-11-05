@@ -6,4 +6,8 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :campaigns
+
+  def self.search_by_username(username)
+    where('lower(username) LIKE ?', "%#{username.downcase}%")
+  end
 end
