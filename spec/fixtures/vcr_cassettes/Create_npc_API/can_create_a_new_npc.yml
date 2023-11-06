@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","max_tokens":300,"messages":[{"role":"system","content":"You
+        are a helpful assistant."},{"role":"user","content":"create a new fantasy
+        npc with the following unique attributes:\n        name:\n        gender:\n        race:\n        klass:\n        description:\n        attitude:"}]}'
+    headers:
+      Authorization:
+      - Bearer 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
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 06 Nov 2023 16:06:40 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-a2zw6rfoualiqgcougwcfbw9
+      Openai-Processing-Ms:
+      - '21162'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89650'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 232ms
+      X-Request-Id:
+      - 310c1a2b17028fc2ee58fd176014bc67
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 821e95427f3c538d-DEN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8HwPFAS0KRf1i87r87obh6v3dupeK",
+          "object": "chat.completion",
+          "created": 1699286781,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Name: Aurora\nGender: Female\nRace: Elf\nClass: Enchantress\nDescription: Aurora is a strikingly beautiful Elf with ethereal features. Her long flowing golden hair cascades down her back, glinting with a hint of magic. Her piercing emerald eyes hold a combination of wisdom and mystery. Adorned in a flowing cloak made of shimmering velvet, she looks like she belongs in a realm beyond mortal comprehension.\nAttitude: Aurora is known for her calm and composed demeanor. She possesses an unwavering sense of duty and carries herself with grace and elegance. Though she is warm and approachable, there lies a sense of otherworldliness about her. She exudes an air of wisdom, making her an intriguing presence to be around. Her magical abilities are highly sought after, but she only uses them for noble and just causes. Aurora holds a deep respect for nature and is a staunch protector of all living creatures. She believes in the power of kindness and compassion, and always strives to do what is right."
+              },
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 46,
+            "completion_tokens": 211,
+            "total_tokens": 257
+          }
+        }
+  recorded_at: Mon, 06 Nov 2023 16:06:40 GMT
+recorded_with: VCR 6.2.0

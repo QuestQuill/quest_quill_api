@@ -10,7 +10,7 @@ class Api::V1::CampaignsController < ApplicationController
   def create
     render json: Campaign.create(campaign_params)
   end
-
+  
   private 
 
   def campaign_params
