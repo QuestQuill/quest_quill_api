@@ -13,4 +13,9 @@ def load_test_data
     @town1 = @campaign1.towns.create(name: "Dimsdale", description: "A quaint little town...", leadership: "The mayor of Dimsdale", shops: "A hair solon", taverns: "the armoured duck")
     @town2 = @campaign2.towns.create(name: "Doomsdale", description: "A quiet little town...", leadership: "The mayor of Doomsdale", shops: "A nail solon", taverns: "the armoured goose")
     @town3 = @campaign3.towns.create(name: "Dimesdale", description: "A squat little town...", leadership: "The mayor of Dimesdale", shops: "A foot solon", taverns: "the armoured pheasant")
+
+    # Npcs
+    @npc1 = @campaign1.npcs.create!(name: "Elowen Swiftblade", gender: "Female", race: "Elf", klass: "Rogue", description: "A lithe and agile elf", attitude: "Mysterious")
+    @npc2 = @campaign2.npcs.create!(name: "Thrain Ironshield", gender: "Male", race: "Dwarf", klass: "Cleric", description: "A stout and heavily armored dwarf ", attitude: "Gruff")
+    @npc3 = @campaign3.npcs.create!(name: "Sylas Thornrider", gender: "Male", race: "Half-Elf", klass: "Bard", description: "A charismatic and charming half-elf", attitude: "Cheerful")
 end
