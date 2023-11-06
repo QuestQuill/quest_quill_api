@@ -11,6 +11,8 @@ class Api::V1::UsersController < ApplicationController
     render json: User.create!(user_params)
   end
 
+  
+
   private
 
   def user_params
