@@ -20,4 +20,15 @@ class Api::V1::TownsController < ApplicationController
 
     render json: Town.create(town_data)
   end
+
+  def update
+    # require 'pry';binding.pry
+    render json: Town.update(params[:id], town_params)
+  end
+
+  private
+
+  def town_params
+    params.permit(:name, :description, :leadership, :shops, :taverns, :campaign_id)
+  end
 end

@@ -14,6 +14,7 @@ gem "puma", "~> 5.0"
 
 gem 'faraday'
 gem "jsonapi-serializer"
+gem 'aws-sdk-s3'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
