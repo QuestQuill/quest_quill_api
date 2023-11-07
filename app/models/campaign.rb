@@ -8,4 +8,5 @@ class Campaign < ApplicationRecord
   belongs_to :user
   has_many :towns
   has_many :npcs
+  has_many :quests
 end

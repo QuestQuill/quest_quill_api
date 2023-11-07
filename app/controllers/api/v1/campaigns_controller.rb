@@ -29,6 +29,6 @@ class Api::V1::CampaignsController < ApplicationController
   private 
 
   def campaign_params
-    params.permit(:name, :player_num, :themes, :user_id, :campaign_photo)
+    params.permit(:name, :player_num, :user_id, :campaign_photo, themes: [])
   end
 end

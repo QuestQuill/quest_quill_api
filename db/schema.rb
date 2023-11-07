@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_06_205123) do
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
     t.integer "player_num"
-    t.string "themes"
+    t.text "themes", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -63,6 +63,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_06_205123) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["campaign_id"], name: "index_npcs_on_campaign_id"
+  end
+
+  create_table "quests", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "goal"
+    t.bigint "campaign_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_quests_on_campaign_id"
   end
 
   create_table "towns", force: :cascade do |t|
@@ -89,5 +99,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_06_205123) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "campaigns", "users"
   add_foreign_key "npcs", "campaigns"
+  add_foreign_key "quests", "campaigns"
   add_foreign_key "towns", "campaigns"
 end

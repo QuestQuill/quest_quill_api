@@ -3,7 +3,7 @@ class CreateCampaigns < ActiveRecord::Migration[7.0]
     create_table :campaigns do |t|
       t.string :name
       t.integer :player_num
-      t.string :themes
+      t.text :themes, array: true, default: []
 
       t.timestamps
     end

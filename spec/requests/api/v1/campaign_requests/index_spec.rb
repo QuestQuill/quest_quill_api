@@ -12,6 +12,7 @@ RSpec.describe 'Campaign Index', type: :request do
     json_response = JSON.parse(response.body)
     campaigns = Campaign.all
     
+<<<<<<< HEAD
     expect(json_response['data']).to be_a(Array)
     expect(json_response['data'].size).to eq(campaigns.size) 
 
@@ -22,5 +23,17 @@ RSpec.describe 'Campaign Index', type: :request do
       expect(campaign_data['attributes']['player_num']).to eq(campaigns[index].player_num)
       expect(campaign_data['attributes']['themes']).to eq(campaigns[index].themes)
     end
+=======
+    expect(json_response).to be_a(Array)
+    expect(json_response.size).to eq(3) 
+    expect(json_response).to all(have_key('name'))
+    expect(json_response).to all(have_key('player_num'))
+    expect(json_response).to all(have_key('themes'))
+    
+    expect(json_response[0]).to be_a(Hash)
+    expect(json_response[0]['name']).to eq('Campaign 1')
+    expect(json_response[0]['player_num']).to eq(5)
+    expect(json_response[0]['themes'][0]).to eq('Fantasy')
+>>>>>>> 578a9f60f3855c9c019fd189e121dadcf1316358
   end
 end
