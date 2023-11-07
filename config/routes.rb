@@ -25,6 +25,12 @@ Rails.application.routes.draw do
               post 'upload_photo'
             end
           end
+
+          resources :quests, only: [:index, :show, :create, :update] do
+            member do
+              post 'upload_photo'
+            end
+          end
         end
         
         get 'search', to: 'users/users_search#search', on: :collection
