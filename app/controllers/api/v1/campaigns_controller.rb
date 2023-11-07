@@ -6,4 +6,14 @@ class Api::V1::CampaignsController < ApplicationController
   def show
     render json: Campaign.find(params[:id])
   end
+
+  def create
+    render json: Campaign.create(campaign_params)
+  end
+
+  private
+
+  def campaign_params
+    params.permit(:name, :player_num, :themes, :user_id)
+  end
 end

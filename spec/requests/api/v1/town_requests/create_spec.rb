@@ -5,26 +5,6 @@ RSpec.describe "Towns API" do
     load_test_data
   end
 
-  it "can get a list of all towns" do
-    get "/api/v1/users/#{@users.first.id}/campaigns/#{@campaigns.first.id}/towns"
-
-    expect(response).to be_successful
-
-    towns = JSON.parse(response.body)
-
-    # more testing here!
-  end
-
-  it "can get a single town" do
-    get "/api/v1/users/#{@users.first.id}/campaigns/#{@campaigns.first.id}/towns/#{@towns.first.id}"
-
-    expect(response).to be_successful
-
-    town = JSON.parse(response.body)
-
-    # mroe testing here!
-  end
-
   it "can create a new town", :vcr do
 
     headers = {"CONTENT_TYPE" => "application/json"}
@@ -36,11 +16,11 @@ RSpec.describe "Towns API" do
         leadership:
         shops:
         taverns:",
-      campaign: @campaigns.first.id
+      campaign: @campaign1.id
     }
 
 
-    post "/api/v1/users/#{@users.first.id}/campaigns/#{@campaigns.first.id}/towns", headers: headers, params: JSON.generate(params)
+    post "/api/v1/users/#{@user1.id}/campaigns/#{@campaign1.id}/towns", headers: headers, params: JSON.generate(params)
 
     new_town = Town.last
 
