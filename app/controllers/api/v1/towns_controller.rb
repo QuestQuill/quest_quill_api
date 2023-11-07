@@ -1,10 +1,10 @@
 class Api::V1::TownsController < ApplicationController
   def index
-    render json: Town.all
+    render json: TownSerializer.new(Town.all)
   end
 
   def show
-    render json: Town.find(params[:id])
+    render json: TownSerializer.new(Town.find(params[:id]))
   end
 
   def create
@@ -18,13 +18,13 @@ class Api::V1::TownsController < ApplicationController
       campaign_id: params[:campaign_id]
     }
 
-    render json: Town.create(town_data)
+    render json: TownSerializer.new(Town.create(town_data))
   end
 
   def update
     @town = Town.find(params[:id])
     if @town.update(town_params)
-      render json: @town
+      render json: TownSerializer.new(@town)
     else
       render json: { errors: @town.errors.full_messages }, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class Api::V1::TownsController < ApplicationController
   def upload_photo
     @town = Town.find(params[:id])
     @town.town_photo.attach(params[:town_photo])
-    render json: @town
+    render json: TownSerializer.new(@town)
   end
 
   private
