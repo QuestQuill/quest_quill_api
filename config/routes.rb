@@ -14,7 +14,7 @@ Rails.application.routes.draw do
             post 'upload_photo'
           end
 
-          resources :towns, only: [:index, :show, :create, :update] do
+          resources :towns, only: [:index, :show, :update, :create] do
             member do
               post 'upload_photo'
             end

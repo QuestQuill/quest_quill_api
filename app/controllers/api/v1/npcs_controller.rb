@@ -1,10 +1,10 @@
 class Api::V1::NpcsController < ApplicationController
     def index
-        render json: NpcSerializer.new(Npc.all)
+        render json: Npc.all
     end
 
     def show
-        render json: NpcSerializer.new(Npc.find(params[:id]))
+        render json: Npc.find(params[:id])
     end
 
     def create
@@ -19,13 +19,13 @@ class Api::V1::NpcsController < ApplicationController
             campaign_id: params[:campaign_id]
         }
 
-        render json: NpcSerializer.new(Npc.create(npc_data))
+        render json: Npc.create(npc_data)
     end
 
     def update
         @npc = Npc.find(params[:id])
         if @npc.update(npc_params)
-           render json: NpcSerializer.new(@npc)
+           render json: @npc
         else
             render json: { errors: @npc.errors.full_messages }, status: :unprocessable_entity
         end
@@ -34,7 +34,7 @@ class Api::V1::NpcsController < ApplicationController
     def upload_photo
         @npc = Npc.find(params[:id])
         @npc.npc_photo.attach(params[:npc_photo])
-        render json: NpcSerializer.new(@npc)
+        render json: @npc
     end
     
     private
