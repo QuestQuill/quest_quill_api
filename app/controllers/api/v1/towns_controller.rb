@@ -22,13 +22,23 @@ class Api::V1::TownsController < ApplicationController
   end
 
   def update
-    # require 'pry';binding.pry
-    render json: Town.update(params[:id], town_params)
+    @town = Town.find(params[:id])
+    if @town.update(town_params)
+      render json: @town
+    else
+      render json: { errors: @town.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def upload_photo
+    @town = Town.find(params[:id])
+    @town.town_photo.attach(params[:town_photo])
+    render json: @town
   end
 
   private
 
   def town_params
-    params.permit(:name, :description, :leadership, :shops, :taverns, :campaign_id)
+    params.permit(:name, :description, :leadership, :shops, :taverns, :campaign_id, :town_photo)
   end
 end

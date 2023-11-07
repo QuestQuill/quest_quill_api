@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index, :show, :create] do
         resources :campaigns, only: [:index, :show, :create] do
-          resources :towns, only: [:index, :show, :update, :create]
+          resources :towns, only: [:index, :show, :update, :create] do
+            member do
+              post 'upload_photo'
+            end
+          end
           resources :npcs, only: [:index, :show, :create]
         end
         get 'search', to: 'users/users_search#search', on: :collection
