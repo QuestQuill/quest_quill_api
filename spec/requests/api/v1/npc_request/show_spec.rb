@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Towns API" do
+RSpec.describe "NPC API" do
   before :each do
     load_test_data
   end
@@ -10,9 +10,17 @@ RSpec.describe "Towns API" do
 
     expect(response).to be_successful
 
-    npc = JSON.parse(response.body)
+    json_response = JSON.parse(response.body)
 
-    expect(npc['id']).to be_a(Integer)
-    expect(npc).to be_a(Hash)
+    expect(json_response['data']['id']).to eq(@npc1.id.to_s)
+    expect(json_response['data']['type']).to eq('npc')
+
+    expect(json_response['data']['attributes']['name']).to eq(@npc1.name)
+    expect(json_response['data']['attributes']['gender']).to eq(@npc1.gender)
+    expect(json_response['data']['attributes']['race']).to eq(@npc1.race)
+    expect(json_response['data']['attributes']['klass']).to eq(@npc1.klass)
+    expect(json_response['data']['attributes']['description']).to eq(@npc1.description)
+    expect(json_response['data']['attributes']['attitude']).to eq(@npc1.attitude)
+    expect(json_response['data']['attributes']['campaign_id']).to eq(@npc1.campaign_id)
   end
 end
