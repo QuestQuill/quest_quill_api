@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_05_205029) do
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
     t.integer "player_num"
-    t.string "themes"
+    t.text "themes", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false

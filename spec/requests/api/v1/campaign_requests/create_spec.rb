@@ -9,7 +9,7 @@ RSpec.describe "Campaign Creation" do
     campaign_params = ({
       name: "Once upon a time",
       player_num: 4,
-      themes: "Fantasy",
+      themes: ["Fantasy", "High-Magic"],
       user_id: @user1.id
     })
     headers = {"CONTENT_TYPE" => "application/json"}
@@ -24,6 +24,6 @@ RSpec.describe "Campaign Creation" do
     expect(response.content_type).to eq('application/json; charset=utf-8')
     expect(new_campaign.name).to eq('Once upon a time')
     expect(new_campaign.player_num).to eq(4)
-    expect(new_campaign.themes).to eq("Fantasy")
+    expect(new_campaign.themes).to eq(["Fantasy", "High-Magic"])
   end
 end
