@@ -1,0 +1,36 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/users/:user_id/campaigns":
+    post:
+      summary: Creates a Campaign
+      tags:
+      - Campaign
+      parameters: []
+      responses:
+        '200':
+          description: campaign created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                player_num:
+                  type: integer
+                themes:
+                  type: string
+              required:
+              - name
+              - player_num
+              - themes
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
