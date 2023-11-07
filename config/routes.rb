@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :show, :create] do
+        member do
+          post 'upload_photo'
+        end
+        
         resources :campaigns, only: [:index, :show, :create] do
           resources :towns, only: [:index, :show, :update, :create] do
             member do
