@@ -21,4 +21,25 @@ class Api::V1::NpcsController < ApplicationController
 
         render json: Npc.create(npc_data)
     end
+
+    def update
+        @npc = Npc.find(params[:id])
+        if @npc.update(npc_params)
+           render json: @npc
+        else
+            render json: { errors: @npc.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+    
+    def upload_photo
+        @npc = Npc.find(params[:id])
+        @npc.npc_photo.attach(params[:npc_photo])
+        render json: @npc
+    end
+    
+    private
+    
+    def npc_params
+        params.permit(:name, :gender, :race, :klass, :description, :attitude, :campaign_id, :npc_photo)
+    end
 end

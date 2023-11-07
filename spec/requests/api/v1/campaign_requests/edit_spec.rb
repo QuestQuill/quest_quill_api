@@ -21,10 +21,8 @@ RSpec.describe 'Update a user' do
 
     expect(previous_name).to eq("Campaign 1")
     expect(@campaign1.name).to eq("Coolest Campaign Ever!!")
-
   end
 
-  # not presently working
   it 'can upload picture to a campaign' do
     file = fixture_file_upload('public/images/test_campaign_image.png', 'image/png')
 
@@ -32,7 +30,7 @@ RSpec.describe 'Update a user' do
 
     expect(response).to be_successful
     @campaign1.reload
-# require 'pry';binding.pry
+
     expect(@campaign1.campaign_photo).to be_attached
   end
 end

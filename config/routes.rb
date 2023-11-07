@@ -13,13 +13,20 @@ Rails.application.routes.draw do
           member do
             post 'upload_photo'
           end
+
           resources :towns, only: [:index, :show, :update, :create] do
             member do
               post 'upload_photo'
             end
           end
-          resources :npcs, only: [:index, :show, :create]
+
+          resources :npcs, only: [:index, :show, :create, :update] do
+            member do
+              post 'upload_photo'
+            end
+          end
         end
+        
         get 'search', to: 'users/users_search#search', on: :collection
         post 'login', to: 'users/users_login#login', on: :collection
       end
