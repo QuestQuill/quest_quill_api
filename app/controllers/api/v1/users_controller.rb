@@ -1,18 +1,18 @@
 class Api::V1::UsersController < ApplicationController
   def index
-    render json: User.all
+    render json: UserSerializer.new(User.all)
   end
 
   def show
-    render json: User.find(params[:id])
+    render json: UserSerializer.new(User.find(params[:id]))
   end
 
   def create
-    render json: User.create!(user_params)
+    render json: UserSerializer.new(User.create!(user_params))
   end
 
   def upload_photo
-    @user = User.find(params[:id])
+    @user = UserSerializer.new(User.find(params[:id]))
     @user.user_photo.attach(params[:user_photo])
     render json: @user
   end
