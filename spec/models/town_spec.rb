@@ -14,5 +14,4 @@ RSpec.describe Town, type: :model do
     it {should validate_presence_of(:campaign)}
   end
 
-  pending "add some examples to (or delete) #{__FILE__}"
 end

@@ -5,9 +5,9 @@ def load_test_data
     @user3 = User.create(username: 'user3', email: 'user3@example.com', password: 'password3')
 
   # Campaigns
-    @campaign1 = @user1.campaigns.create(name: "Campaign 1",player_num: 5,  themes: "Fantasy" )
-    @campaign2 = @user2.campaigns.create(name: "Campaign 2",player_num: 3,  themes: "Science Fiction")
-    @campaign3 = @user3.campaigns.create(name: "Campaign 3",player_num: 4,  themes: "Mystery"  )
+    @campaign1 = @user1.campaigns.create(name: "Campaign 1",player_num: 5,  themes: ["Fantasy"])
+    @campaign2 = @user2.campaigns.create(name: "Campaign 2",player_num: 3,  themes: ["Science Fiction"])
+    @campaign3 = @user3.campaigns.create(name: "Campaign 3",player_num: 4,  themes: ["Mystery"])
 
     # Towns
     @town1 = @campaign1.towns.create(name: "Dimsdale", description: "A quaint little town...", leadership: "The mayor of Dimsdale", shops: "A hair solon", taverns: "the armoured duck")
