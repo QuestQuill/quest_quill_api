@@ -11,7 +11,4 @@ RSpec.describe Campaign, type: :model do
     it {should validate_presence_of(:player_num)}
     it {should validate_presence_of(:themes)}
   end
-
-  pending "add some examples to (or delete) #{__FILE__}"
-  
 end

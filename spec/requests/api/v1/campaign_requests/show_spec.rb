@@ -18,7 +18,7 @@ RSpec.describe 'Campaign Show', type: :request do
 
     expect(json_response['name']).to eq('Campaign 1')
     expect(json_response['player_num']).to eq(5)
-    expect(json_response['themes']).to eq('Fantasy')
+    expect(json_response['themes'][0]).to eq('Fantasy')
 
   end
 end

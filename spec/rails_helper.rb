@@ -1,7 +1,9 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'simplecov'
-SimpleCov.start
 
+
+SimpleCov.start
+require 'webmock/rspec'
 require 'spec_helper'
 require 'test_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -80,4 +82,5 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data('api_key') { ENV['api_key'] }
   config.configure_rspec_metadata!
+  config.allow_http_connections_when_no_cassette = true
 end
