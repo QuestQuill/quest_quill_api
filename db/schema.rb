@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_05_205029) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_06_203008) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,6 +37,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_05_205029) do
     t.index ["campaign_id"], name: "index_npcs_on_campaign_id"
   end
 
+  create_table "quests", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "goal"
+    t.bigint "campaign_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_quests_on_campaign_id"
+  end
+
   create_table "towns", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -59,5 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_05_205029) do
 
   add_foreign_key "campaigns", "users"
   add_foreign_key "npcs", "campaigns"
+  add_foreign_key "quests", "campaigns"
   add_foreign_key "towns", "campaigns"
 end
