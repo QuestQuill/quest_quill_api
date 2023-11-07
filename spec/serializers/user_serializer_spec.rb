@@ -14,7 +14,8 @@ RSpec.describe 'User Serializer' do
         type: :user,
         attributes: {
           username: @user1.username,
-          email: @user1.email
+          email: @user1.email,
+          user_photo: @user1.user_photo
         }
       }
     }
