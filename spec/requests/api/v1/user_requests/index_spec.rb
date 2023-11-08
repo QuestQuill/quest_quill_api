@@ -10,27 +10,16 @@ RSpec.describe 'User Index', type: :request do
     expect(response).to be_successful
 
     json_response = JSON.parse(response.body)
+    users = User.all
     
-    expect(json_response).to be_a(Array)
-    expect(json_response.size).to eq(3) 
-    expect(json_response).to all(have_key('username'))
-    expect(json_response).to all(have_key('email'))
-    expect(json_response).to all(have_key('password_digest'))
-    
-    expect(json_response[0]).to be_a(Hash)
-    expect(json_response[0]['username']).to eq('user1')
-    expect(json_response[0]['email']).to eq('user1@example.com')
-    #expect(json_response[0]['password_digest']).to eq('password1')
+    expect(json_response['data']).to be_a(Array)
+    expect(json_response['data'].size).to eq(users.size)
 
-    expect(json_response[1]).to be_a(Hash)
-    expect(json_response[1]['username']).to eq('user2')
-    expect(json_response[1]['email']).to eq('user2@example.com')
-    #expect(json_response[0]['password_digest']).to eq('password2')
-
-    expect(json_response[2]).to be_a(Hash)
-    expect(json_response[2]['username']).to eq('user3')
-    expect(json_response[2]['email']).to eq('user3@example.com')
-    #expect(json_response[0]['password_digest']).to eq('password3')
-
+    json_response['data'].each_with_index do |user_data, index|
+      expect(user_data['id']).to eq(users[index].id.to_s)
+      expect(user_data['type']).to eq('user')
+      expect(user_data['attributes']['username']).to eq(users[index].username)
+      expect(user_data['attributes']['email']).to eq(users[index].email)
+    end
   end
 end

@@ -7,6 +7,8 @@ class User < ApplicationRecord
   
   has_many :campaigns
 
+  has_one_attached :user_photo
+
   def self.search_by_email(email)
     where('lower(email) LIKE ?', "%#{email.downcase}%")
   end

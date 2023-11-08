@@ -10,27 +10,17 @@ RSpec.describe 'Campaign Index', type: :request do
     expect(response).to be_successful
 
     json_response = JSON.parse(response.body)
+    campaigns = Campaign.all
     
-    expect(json_response).to be_a(Array)
-    expect(json_response.size).to eq(3) 
-    expect(json_response).to all(have_key('name'))
-    expect(json_response).to all(have_key('player_num'))
-    expect(json_response).to all(have_key('themes'))
-    
-    expect(json_response[0]).to be_a(Hash)
-    expect(json_response[0]['name']).to eq('Campaign 1')
-    expect(json_response[0]['player_num']).to eq(5)
-    expect(json_response[0]['themes']).to eq('Fantasy')
+    expect(json_response['data']).to be_a(Array)
+    expect(json_response['data'].size).to eq(campaigns.size) 
 
-    # expect(json_response[1]).to be_a(Hash)
-    # expect(json_response[1]['name']).to eq('Campaign 2')
-    # expect(json_response[1]['player_num']).to eq(3)
-    # expect(json_response[1]['themes']).to eq('Science Fiction')
-
-    # expect(json_response[2]).to be_a(Hash)
-    # expect(json_response[2]['name']).to eq('Campaign 3')
-    # expect(json_response[2]['player_num']).to eq(4)
-    # expect(json_response[2]['themes']).to eq('Mystery')
-    
+    json_response['data'].each_with_index do |campaign_data, index|
+      expect(campaign_data['id']).to eq(campaigns[index].id.to_s)
+      expect(campaign_data['type']).to eq('campaign')
+      expect(campaign_data['attributes']['name']).to eq(campaigns[index].name)
+      expect(campaign_data['attributes']['player_num']).to eq(campaigns[index].player_num)
+      expect(campaign_data['attributes']['themes']).to eq(campaigns[index].themes)
+    end
   end
 end

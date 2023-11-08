@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","max_tokens":300,"messages":[{"role":"system","content":"You
+        are a helpful assistant."},{"role":"user","content":"create a new fantasy
+        quest with the following unique attributes keep it short:\n        name:\n        description:\n        goal:"}]}'
+    headers:
+      Authorization:
+      - Bearer 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
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 07 Nov 2023 00:41:59 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-a2zw6rfoualiqgcougwcfbw9
+      Openai-Processing-Ms:
+      - '29755'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89659'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 227ms
+      X-Request-Id:
+      - 24e52c2f97f481c552443526087de100
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 822187ea8d9269db-DEN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8I4RmeZSoxJwryrk3jRsn72njF1em",
+          "object": "chat.completion",
+          "created": 1699317690,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Name: The Lost Crown of Eldoria\n\nDescription: Deep within the enchanted forests of Eldoria lies a hidden secret - the legendary Crown of Eldoria, a powerful artifact said to grant its wearer untold magical abilities. However, the crown has been lost for centuries, its location known only to a forgotten guardian spirit. The time has come for a brave adventurer to embark on a perilous quest to retrieve the crown and fulfill their destiny.\n\nGoal: Your mission is to navigate the treacherous paths of Eldoria, braving dangerous creatures and solving ancient riddles, in order to reach the heart of the enchanted forest. Once there, you must find and gain the trust of the guardian spirit, who holds the key to the location of the lost crown. Only by proving your worth and protecting the sacred balance of Eldoria will you be granted the knowledge to find the fabled artifact and restore peace to the land."
+              },
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 40,
+            "completion_tokens": 184,
+            "total_tokens": 224
+          }
+        }
+  recorded_at: Tue, 07 Nov 2023 00:41:59 GMT
+recorded_with: VCR 6.2.0
