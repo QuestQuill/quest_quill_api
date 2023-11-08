@@ -11,14 +11,15 @@ RSpec.describe 'User Search', type: :request do
 
     expect(response).to be_successful
     
-    json_response = JSON.parse(response.body)
+    json_response = JSON.parse(response.body, symbolize_names: true)
     
-    expect(json_response).to be_an(Array)
+    expect(json_response).to be_an(Hash)
+    expect(json_response[:data]).to be_an(Array)
 
-    expect(json_response.length).to be >= 1
+    expect(json_response[:data].length).to be >= 1
 
-    expect(json_response[0]['username']).to eq('user1')
-    expect(json_response[0]['email']).to eq('user1@example.com')
+    expect(json_response[:data][0][:attributes][:username]).to eq('user1')
+    expect(json_response[:data][0][:attributes][:email]).to eq('user1@example.com')
   end
 
   it 'happy path searches for user by token' do
@@ -28,14 +29,15 @@ RSpec.describe 'User Search', type: :request do
 
     expect(response).to be_successful
 
-    json_response = JSON.parse(response.body)
-    
-    expect(json_response).to be_an(Array)
+    json_response = JSON.parse(response.body, symbolize_names: true)
+        
+    expect(json_response).to be_an(Hash)
+    expect(json_response[:data]).to be_an(Array)
 
-    expect(json_response.length).to be >= 1
+    expect(json_response[:data].length).to be >= 1
 
-    expect(json_response[0]['username']).to eq('user1')
-    expect(json_response[0]['email']).to eq('user1@example.com')
+    expect(json_response[:data][0][:attributes][:username]).to eq('user1')
+    expect(json_response[:data][0][:attributes][:email]).to eq('user1@example.com')
   end
 
   it 'Sad Path email not found' do
