@@ -14,10 +14,12 @@ RSpec.describe 'User Serializer' do
         id: @user1.id.to_s,
         type: :user,
         attributes: {
+          uid: nil,
           username: @user1.username,
           email: @user1.email,
           token: @user1.token,
           token_expiration: @user1.token_expiration,
+          auth_token: nil,
           user_photo: @user1.user_photo,
           campaigns: users_campaigns
         }

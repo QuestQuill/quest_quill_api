@@ -3,5 +3,5 @@ class UserSerializer
 
   set_type :user
   set_id :id
-  attributes :username, :email, :user_photo, :token, :token_expiration, :campaigns
+  attributes :uid, :username, :email, :user_photo, :token, :token_expiration, :auth_token, :campaigns
 end
