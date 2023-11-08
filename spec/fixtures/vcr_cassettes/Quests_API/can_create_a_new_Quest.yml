@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 08 Nov 2023 05:59:53 GMT
+      - Wed, 08 Nov 2023 23:10:29 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -41,7 +41,7 @@ http_interactions:
       Openai-Organization:
       - user-a2zw6rfoualiqgcougwcfbw9
       Openai-Processing-Ms:
-      - '28138'
+      - '20400'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -59,42 +59,42 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 227ms
       X-Request-Id:
-      - 5d490a9afb314483c0b9ea997dfd032f
+      - 7334cf1b5842c68444eee7eb0cc3ce31
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=DpZX8P0ONypNkaJYvZVJNqzSLRNiOaa6n9arZO0h_Nc-1699423193-0-AYqFjYHl+ISHLA2GijaQ3sAODNJg6jcesggICO94tvPWW++91ZBXLUoQOlZpgqVBBnmUl3vPWQaa4Xmx7V+7Itc=;
-        path=/; expires=Wed, 08-Nov-23 06:29:53 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=8RMbFrsrZLKFl4x9NqXAJ3Km0K8VdDOMnhbZSp8aRr0-1699485029-0-AZOpgR4BkgbaRLb3hNlcCCmtYHg8P8nYjaiVTLwNBSJiw9p/X+sXmPTlvS0Y94TwuYzAVId8ZdK2SUoCO0wwucY=;
+        path=/; expires=Wed, 08-Nov-23 23:40:29 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 822b96fcaa812cce-DFW
+      - 82317cd5fdc82fd0-DFW
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8IVszdWiHQrRcSoW697CyKP5Z3r8z",
+          "id": "chatcmpl-8IlyTSSrUSLN9Rj16OIKD1ECkSrax",
           "object": "chat.completion",
-          "created": 1699423165,
+          "created": 1699485009,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "Name: The Lost Amulet of Vespera\n\nDescription: In the mystical realm of Vespera, a powerful and ancient amulet has been lost for centuries. Legends say that it possesses the ability to control the elements and bring balance to the world. However, its whereabouts have remained a mystery, until now.\n\nGoal: Embark on a perilous journey through enchanted forests, treacherous mountains, and hidden caves to retrieve the Lost Amulet of Vespera. Encounter magical creatures, solve riddles, and overcome obstacles to unlock the ancient secrets guarding the amulet's location. Only through bravery, wisdom, and teamwork can you recover the amulet and restore harmony to Vespera before it falls into the wrong hands."
+                "content": "Name: The Lost Key\n\nDescription: The Lost Key is a fantasy quest set in the mystical land of Zephyria. Long ago, an ancient artifact known as the Key of Shadows was hidden away to protect the balance between light and darkness. However, a dark sorcerer has stolen the key, plunging the land into chaos.\n\nGoal: Your mission is to retrieve the Lost Key and restore harmony to Zephyria. Along your journey, you will encounter treacherous dungeons, mysterious creatures, and powerful spells. You must outsmart the sorcerer's minions, solve intricate puzzles, and gather a band of loyal allies to aid you in your quest. Only by reclaiming the key can you bring peace back to the land and vanquish the darkness that has taken hold."
               },
               "finish_reason": "stop"
             }
           ],
           "usage": {
             "prompt_tokens": 40,
-            "completion_tokens": 148,
-            "total_tokens": 188
+            "completion_tokens": 157,
+            "total_tokens": 197
           }
         }
-  recorded_at: Wed, 08 Nov 2023 05:59:53 GMT
+  recorded_at: Wed, 08 Nov 2023 23:09:28 GMT
 recorded_with: VCR 6.2.0
