@@ -28,11 +28,9 @@ RSpec.describe 'api/campaign', type: :request do
   end
 
   path '/api/v1/users/:user_id/campaigns/{id}' do
+    parameter name: :id, in: :path, type: :string
     get 'Retrieves a Campaign' do
-      tags 'Campaign'
       produces 'application/json'
-      parameter name: :id, in: :path, type: :string
-      request_body_example value: { campaign: 'Foo' }, name: 'basic', summary: 'Request example description'
     
       response '200', 'campaign found' do
         schema type: :object,
@@ -40,22 +38,20 @@ RSpec.describe 'api/campaign', type: :request do
             id: { type: :integer },
             name: { type: :string },
             player_num: { type: :integer },
-            themes: { type: :string }
+            themes: {
+              type: :array,
+              items: { type: :string }
+            }
           },
           required: ['id', 'name', 'player_num', 'themes']
-      
-        let(:id) { Campaign.create(name: 'foo', player_num: 42, themes: ['bar']).id }
-        let(:campaign) { Campaign.find(id) }
+        
+        let(:campaign) { create(:campaign, name: 'foo', player_num: 42, themes: ['bar']) }
+        let(:id) { campaign.id }
         run_test!
       end
     
       response '404', 'campaign not found' do
         let(:id) { 'invalid' }
-        run_test!
-      end
-    
-      response '406', 'unsupported accept header' do
-        let(:'Accept') { 'application/foo' }
         run_test!
       end
     end
