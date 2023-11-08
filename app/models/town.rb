@@ -6,5 +6,7 @@ class Town < ApplicationRecord
   validates :shops, presence: true
   validates :campaign, presence: true
 
+  has_one_attached :town_photo
+
   belongs_to :campaign
 end

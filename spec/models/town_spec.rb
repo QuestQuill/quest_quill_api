@@ -13,5 +13,4 @@ RSpec.describe Town, type: :model do
     it {should validate_presence_of(:shops)}
     it {should validate_presence_of(:campaign)}
   end
-
 end

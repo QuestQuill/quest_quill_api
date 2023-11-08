@@ -5,14 +5,17 @@ RSpec.describe "Quests API" do
     load_test_data
   end
 
-  it "can get a single town" do
+  it "can get a single Quest" do
     get "/api/v1/users/#{@user1.id}/campaigns/#{@campaign1.id}/quests/#{@quest1.id}"
 
     expect(response).to be_successful
 
-    npc = JSON.parse(response.body)
+    json_response = JSON.parse(response.body)
 
-    expect(npc['id']).to be_a(Integer)
-    expect(npc).to be_a(Hash)
+    expect(json_response['data']['id']).to eq(@quest1.id.to_s)
+    expect(json_response['data']['type']).to eq('quest')
+
+    expect(json_response['data']['attributes']['description']).to eq(@quest1.description)
+    expect(json_response['data']['attributes']['goal']).to eq(@quest1.goal)
   end
 end
