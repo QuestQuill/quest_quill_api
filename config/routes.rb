@@ -36,6 +36,7 @@ Rails.application.routes.draw do
         get 'search', to: 'users/users_search#search', on: :collection
         post 'login', to: 'users/users_login#login', on: :collection
         patch 'update_token', to: "users/users_token#update", on: :collection
+        post 'auth', to: "users/users_github#create", on: :collection
       end
     end
   end  
