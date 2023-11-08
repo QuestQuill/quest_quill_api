@@ -7,7 +7,7 @@ class Api::V1::Users::UsersSearchController < ApplicationController
       end
 
       if !user.empty?
-        render json: user
+        render json: UserSerializer.new(user)
       else
         head :bad_request, status: :bad_request
       end
