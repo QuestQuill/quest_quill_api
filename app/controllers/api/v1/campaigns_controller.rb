@@ -8,7 +8,11 @@ class Api::V1::CampaignsController < ApplicationController
   end
 
   def create
-    render json: Campaign.create(campaign_params)
+    if campaign_params[:name].nil? || campaign_params[:player_num].nil? || campaign_params[:themes].nil?
+      render status: 422
+    else
+      render json: Campaign.create(campaign_params), status: 200
+    end
   end
 
   private

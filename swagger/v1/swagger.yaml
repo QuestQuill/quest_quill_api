@@ -13,6 +13,8 @@ paths:
       responses:
         '200':
           description: campaign created
+        '400':
+          description: invalid request
       requestBody:
         content:
           application/json:
