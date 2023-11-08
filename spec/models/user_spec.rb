@@ -15,9 +15,17 @@ RSpec.describe User, type: :model do
     before(:each) do
       load_test_data
     end
-    it "can search_by_username" do
+    it "can search_by_email" do
       
-      results = User.search_by_username('user1')
+      results = User.search_by_email('user1@example.com')
+
+      expect(results).to include(@user1)
+      expect(results).not_to include(@user2)
+      expect(results).not_to include(@user3)
+    end
+
+    it "can search_by_token" do
+      results = User.search_by_token("abcdefg")
 
       expect(results).to include(@user1)
       expect(results).not_to include(@user2)

@@ -27,4 +27,15 @@ RSpec.describe 'User Login', type: :request do
 
     expect(response).to have_http_status(:unauthorized)
   end
+
+  it "sad path login by email that doesn't exist" do
+    user_params = {
+      email: "wrongemail@example.com",
+      password: "1234"
+    }
+
+    post "/api/v1/users/login", params: user_params
+
+    expect(response).to have_http_status(:unauthorized)
+  end
 end

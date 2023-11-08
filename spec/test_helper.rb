@@ -1,8 +1,8 @@
 def load_test_data
   # Users
-    @user1 = User.create(username: 'user1', email: 'user1@example.com', password: 'password1')
-    @user2 = User.create(username: 'user2', email: 'user2@example.com', password: 'password2')
-    @user3 = User.create(username: 'user3', email: 'user3@example.com', password: 'password3')
+    @user1 = User.create(username: 'user1', email: 'user1@example.com', password: 'password1', token: "abcdefg", token_expiration: Time.now + 10.minutes)
+    @user2 = User.create(username: 'user2', email: 'user2@example.com', password: 'password2', token: "hijklmn", token_expiration: Time.now + 7.minutes)
+    @user3 = User.create(username: 'user3', email: 'user3@example.com', password: 'password3', token: "opqrstu", token_expiration: Time.now + 5.minutes)
 
   # Campaigns
     @campaign1 = @user1.campaigns.create(name: "Campaign 1",player_num: 5,  themes: ["Fantasy"])
