@@ -1,0 +1,100 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","max_tokens":300,"messages":[{"role":"system","content":"You
+        are a helpful assistant."},{"role":"user","content":"create a new fantasy
+        quest with the following unique attributes keep it short:\n        name:\n        description:\n        goal:"}]}'
+    headers:
+      Authorization:
+      - Bearer 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
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 08 Nov 2023 21:04:24 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-a2zw6rfoualiqgcougwcfbw9
+      Openai-Processing-Ms:
+      - '21794'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89659'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 227ms
+      X-Request-Id:
+      - 340ed8dd71f82e502e23819c26cca41f
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=yZgilqYR_XhORQHrvnaxuPpMWP6wcVwCkqbqv3HkVnY-1699477464-0-AY9rtRnp9HthnyMyZylZ8sZsKXQvJeBJoO5drTEGAkGLyVrveI1U5FMtDEbmFZwx6fIz6JrhWquUyBpodLo2NcY=;
+        path=/; expires=Wed, 08-Nov-23 21:34:24 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8230c422fd372d33-DFW
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8Ik0R9DkrovlrxgBBXWQWZRBS8dz5",
+          "object": "chat.completion",
+          "created": 1699477443,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Name: The Forgotten Kingdom\n\nDescription: In the mystical land of Eldoria, a long-lost kingdom has resurfaced after centuries of being forgotten. The kingdom is shrouded in mystery and guarded by magical creatures, making it a treacherous yet alluring place to explore. Legends speak of untold riches and ancient relics hidden within its walls, waiting to be discovered.\n\nGoal: Your mission is to venture into the Forgotten Kingdom and recover the fabled Crown of Eternity, an artifact said to possess unimaginable power. However, you must navigate through an ever-changing labyrinth, overcome dangerous traps, and outwit the guardians that protect the crown. Only with the crown in your possession can you restore balance to the land and fulfill the prophecy that foretells the kingdom's revival. Time is of the essence, as darkness threatens to consume Eldoria once more. Will you emerge victorious and make history by reclaiming the long-lost crown?"
+              },
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 40,
+            "completion_tokens": 192,
+            "total_tokens": 232
+          }
+        }
+  recorded_at: Wed, 08 Nov 2023 21:03:23 GMT
+recorded_with: VCR 6.2.0
