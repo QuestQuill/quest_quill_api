@@ -12,9 +12,10 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def upload_photo
-    @user = UserSerializer.new(User.find(params[:id]))
+    @user = User.find(params[:id])
     @user.user_photo.attach(params[:user_photo])
-    render json: @user
+    @user.user_photo.save
+    render json: UserSerializer.new(@user)
   end
 
   private
