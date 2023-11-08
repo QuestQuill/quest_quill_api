@@ -1,16 +1,21 @@
 class Api::V1::Users::UsersSearchController < ApplicationController
     def search
-      username = User.search_by_username(params[:query])
-      if username.present?
-        render json: username
+      if params[:email]
+        user = User.search_by_email(user_params[:email])
+      elsif params[:token]
+        user = User.search_by_token(user_params[:token])
+      end
+
+      if !user.empty?
+        render json: UserSerializer.new(user)
       else
-        head :bad_request,  status: :bad_request
+        head :bad_request, status: :bad_request
       end
     end
 
   private
 
   def user_params
-    params.permit(:username, :email, :password)
+    params.permit(:email, :token)
   end
 end
