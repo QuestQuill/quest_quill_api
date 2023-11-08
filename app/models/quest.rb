@@ -3,6 +3,7 @@ class Quest < ApplicationRecord
     validates :description, presence: true
     validates :goal, presence: true
   
+    has_one_attached :quest_photo
 
     belongs_to :campaign
 end
