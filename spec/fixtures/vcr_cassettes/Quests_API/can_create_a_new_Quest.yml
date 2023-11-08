@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 08 Nov 2023 21:04:24 GMT
+      - Wed, 08 Nov 2023 23:10:29 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -41,7 +41,7 @@ http_interactions:
       Openai-Organization:
       - user-a2zw6rfoualiqgcougwcfbw9
       Openai-Processing-Ms:
-      - '21794'
+      - '20400'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -59,42 +59,42 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 227ms
       X-Request-Id:
-      - 340ed8dd71f82e502e23819c26cca41f
+      - 7334cf1b5842c68444eee7eb0cc3ce31
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=yZgilqYR_XhORQHrvnaxuPpMWP6wcVwCkqbqv3HkVnY-1699477464-0-AY9rtRnp9HthnyMyZylZ8sZsKXQvJeBJoO5drTEGAkGLyVrveI1U5FMtDEbmFZwx6fIz6JrhWquUyBpodLo2NcY=;
-        path=/; expires=Wed, 08-Nov-23 21:34:24 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=8RMbFrsrZLKFl4x9NqXAJ3Km0K8VdDOMnhbZSp8aRr0-1699485029-0-AZOpgR4BkgbaRLb3hNlcCCmtYHg8P8nYjaiVTLwNBSJiw9p/X+sXmPTlvS0Y94TwuYzAVId8ZdK2SUoCO0wwucY=;
+        path=/; expires=Wed, 08-Nov-23 23:40:29 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 8230c422fd372d33-DFW
+      - 82317cd5fdc82fd0-DFW
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8Ik0R9DkrovlrxgBBXWQWZRBS8dz5",
+          "id": "chatcmpl-8IlyTSSrUSLN9Rj16OIKD1ECkSrax",
           "object": "chat.completion",
-          "created": 1699477443,
+          "created": 1699485009,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "Name: The Forgotten Kingdom\n\nDescription: In the mystical land of Eldoria, a long-lost kingdom has resurfaced after centuries of being forgotten. The kingdom is shrouded in mystery and guarded by magical creatures, making it a treacherous yet alluring place to explore. Legends speak of untold riches and ancient relics hidden within its walls, waiting to be discovered.\n\nGoal: Your mission is to venture into the Forgotten Kingdom and recover the fabled Crown of Eternity, an artifact said to possess unimaginable power. However, you must navigate through an ever-changing labyrinth, overcome dangerous traps, and outwit the guardians that protect the crown. Only with the crown in your possession can you restore balance to the land and fulfill the prophecy that foretells the kingdom's revival. Time is of the essence, as darkness threatens to consume Eldoria once more. Will you emerge victorious and make history by reclaiming the long-lost crown?"
+                "content": "Name: The Lost Key\n\nDescription: The Lost Key is a fantasy quest set in the mystical land of Zephyria. Long ago, an ancient artifact known as the Key of Shadows was hidden away to protect the balance between light and darkness. However, a dark sorcerer has stolen the key, plunging the land into chaos.\n\nGoal: Your mission is to retrieve the Lost Key and restore harmony to Zephyria. Along your journey, you will encounter treacherous dungeons, mysterious creatures, and powerful spells. You must outsmart the sorcerer's minions, solve intricate puzzles, and gather a band of loyal allies to aid you in your quest. Only by reclaiming the key can you bring peace back to the land and vanquish the darkness that has taken hold."
               },
               "finish_reason": "stop"
             }
           ],
           "usage": {
             "prompt_tokens": 40,
-            "completion_tokens": 192,
-            "total_tokens": 232
+            "completion_tokens": 157,
+            "total_tokens": 197
           }
         }
-  recorded_at: Wed, 08 Nov 2023 21:03:23 GMT
+  recorded_at: Wed, 08 Nov 2023 23:09:28 GMT
 recorded_with: VCR 6.2.0

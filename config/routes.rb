@@ -39,5 +39,5 @@ Rails.application.routes.draw do
         post 'auth', to: "users/users_github#create", on: :collection
       end
     end
-  end  
+  end
 end
