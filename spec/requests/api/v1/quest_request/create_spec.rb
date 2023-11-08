@@ -5,7 +5,7 @@ RSpec.describe "Quests API" do
     load_test_data
   end
 
-  it "can create a new npc", :vcr do
+  it "can create a new Quest", :vcr do
 
     headers = {"CONTENT_TYPE" => "application/json"}
     params = {

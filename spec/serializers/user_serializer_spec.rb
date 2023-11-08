@@ -7,6 +7,7 @@ RSpec.describe 'User Serializer' do
 
   it "returns the JSON user object within the serializer's format" do
     serialized_user = UserSerializer.new(@user1).serializable_hash
+    users_campaigns = @user1.campaigns
 
     expected_format = {
       data: {
@@ -15,7 +16,8 @@ RSpec.describe 'User Serializer' do
         attributes: {
           username: @user1.username,
           email: @user1.email,
-          user_photo: @user1.user_photo
+          user_photo: @user1.user_photo,
+          campaigns: users_campaigns
         }
       }
     }

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Update a user' do
+RSpec.describe 'Update a campaign' do
   before :each do
     load_test_data
   end
@@ -9,7 +9,7 @@ RSpec.describe 'Update a user' do
     previous_name = @campaign1.name
     campaign_params = ({ 
                     name: "Coolest Campaign Ever!!",
-                    themes: ["Awesoem", "Cool"],
+                    themes: ["Awesome", "Cool"],
                     player_num: 4
     })
     headers = {"CONTENT_TYPE" => "application/json"}

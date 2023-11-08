@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Create npc API" do
+RSpec.describe "Create NPC API" do
   before :each do
     load_test_data
   end
@@ -19,7 +19,6 @@ RSpec.describe "Create npc API" do
         attitude:",
       campaign: @campaign1.id
     }
-
 
     post "/api/v1/users/#{@user1.id}/campaigns/#{@campaign1.id}/npcs", headers: headers, params: JSON.generate(params)
 

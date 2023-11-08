@@ -4,6 +4,7 @@ RSpec.describe 'User Show', type: :request do
   before(:each) do
     load_test_data
   end
+
   it 'Returns User By ID' do
     get "/api/v1/users/#{@user1.id}"
 
