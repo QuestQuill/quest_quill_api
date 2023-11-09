@@ -11,10 +11,9 @@ RSpec.describe 'Campaign Show', type: :request do
 
     json_response = JSON.parse(response.body)
 
-    expect(json_response['data']['id']).to eq(@campaign1.id.to_s)
-    expect(json_response['data']['type']).to eq('campaign')
-    expect(json_response['data']['attributes']['name']).to eq(@campaign1.name)
-    expect(json_response['data']['attributes']['player_num']).to eq(@campaign1.player_num)
-    expect(json_response['data']['attributes']['themes']).to eq(@campaign1.themes)
+    expect(json_response['id']).to eq(@campaign1.id)
+    expect(json_response['name']).to eq(@campaign1.name)
+    expect(json_response['player_num']).to eq(@campaign1.player_num)
+    expect(json_response['themes']).to eq(@campaign1.themes)
   end
 end

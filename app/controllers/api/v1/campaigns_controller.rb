@@ -12,14 +12,6 @@ class Api::V1::CampaignsController < ApplicationController
     end
   end
 
-  def create
-    if campaign_params[:name].nil? || campaign_params[:player_num].nil? || campaign_params[:themes].nil?
-      render status: 422
-    else
-      render json: Campaign.create(campaign_params), status: 200
-    end
-    render json: CampaignSerializer.new(Campaign.find(params[:id]))
-  end
 
   def create
     render json: CampaignSerializer.new(Campaign.create(campaign_params))

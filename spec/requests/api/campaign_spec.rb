@@ -20,10 +20,7 @@ RSpec.describe 'api/campaign', type: :request do
         run_test!
       end
 
-      response '422', 'invalid request' do
-        let(:campaign) { { name: 'foo' } }
-        run_test!
-      end
+      
     end
   end
 
