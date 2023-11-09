@@ -15,7 +15,7 @@ class Api::V1::NpcsController < ApplicationController
             name: poro.name,
             gender: poro.gender,
             race: poro.race,
-            klass: poro.class,
+            klass: poro.klass,
             description: poro.description,
             attitude: poro.attitude,
             campaign_id: params[:campaign_id]
