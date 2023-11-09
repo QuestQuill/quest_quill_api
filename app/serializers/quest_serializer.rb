@@ -3,5 +3,5 @@ class QuestSerializer
 
   set_type :quest
   set_id :id
-  attributes :name, :description, :goal, :quest_photo
+  attributes :name, :description, :goal, :campaign_id, :quest_photo
 end
