@@ -35,4 +35,18 @@ RSpec.describe "Edit a Town" do
 
     expect(@town1.town_photo).to be_attached
   end
+
+  it 'Sad Path edit with bad info' do
+    previous_name = @town1.name
+    town_params = ({name: ''})
+    headers = { "CONTENT_TYPE" => "application/json" }
+  
+    patch "/api/v1/users/#{@user1.id}/campaigns/#{@campaign1.id}/towns/#{@town1.id}", headers: headers, params: JSON.generate(town_params)
+  
+    expect(response).to have_http_status(:unprocessable_entity)
+    @town1.reload
+  
+    expect(previous_name).to eq("Dimsdale") 
+    expect(@town1.name).to eq(previous_name)
+  end
 end
