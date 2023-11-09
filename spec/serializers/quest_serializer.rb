@@ -15,7 +15,8 @@ RSpec.describe 'Quest Serializer' do
         attributes: {
           name: @quest1.name,
           description: @quest1.description,
-          goal: @quest1.goal
+          goal: @quest1.goal,
+          campaign_id: @quest1.campaign_id
         }
       }
     }
