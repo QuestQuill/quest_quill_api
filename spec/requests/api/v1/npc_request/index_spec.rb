@@ -11,7 +11,7 @@ RSpec.describe "NPCs API" do
     expect(response).to be_successful
 
     json_response = JSON.parse(response.body)
-    npcs = Npc.all
+    npcs = @campaign1.npcs
 
     expect(json_response['data']).to be_a(Array)
     expect(json_response['data'].size).to eq(npcs.size) 

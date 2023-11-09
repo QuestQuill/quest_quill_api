@@ -1,6 +1,8 @@
 class Api::V1::TownsController < ApplicationController
   def index
-    render json: TownSerializer.new(Town.all)
+    campaign = Campaign.find(params[:campaign_id])
+    towns = campaign.towns
+    render json: TownSerializer.new(towns)
   end
 
   def show

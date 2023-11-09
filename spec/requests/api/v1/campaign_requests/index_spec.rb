@@ -10,7 +10,7 @@ RSpec.describe 'Campaign Index', type: :request do
     expect(response).to be_successful
 
     json_response = JSON.parse(response.body)
-    campaigns = Campaign.all
+    campaigns = @user1.campaigns
     
     expect(json_response['data']).to be_a(Array)
     expect(json_response['data'].size).to eq(campaigns.size) 
