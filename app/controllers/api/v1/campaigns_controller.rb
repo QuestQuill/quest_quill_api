@@ -4,6 +4,20 @@ class Api::V1::CampaignsController < ApplicationController
   end
 
   def show
+    begin
+      campaign = Campaign.find(params[:id])
+      render json: campaign
+    rescue ActiveRecord::RecordNotFound
+      render status: 404
+    end
+  end
+
+  def create
+    if campaign_params[:name].nil? || campaign_params[:player_num].nil? || campaign_params[:themes].nil?
+      render status: 422
+    else
+      render json: Campaign.create(campaign_params), status: 200
+    end
     render json: CampaignSerializer.new(Campaign.find(params[:id]))
   end
 

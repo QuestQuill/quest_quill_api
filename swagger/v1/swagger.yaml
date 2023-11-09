@@ -1,0 +1,105 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/users/:user_id/campaigns":
+    post:
+      summary: Creates a Campaign
+      tags:
+      - Campaign
+      parameters: []
+      responses:
+        '200':
+          description: campaign created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                player_num:
+                  type: integer
+                themes:
+                  type: string
+              required:
+              - name
+              - player_num
+              - themes
+  "/api/v1/users/:user_id/campaigns/{id}":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieves a Campaign
+      responses:
+        '200':
+          description: campaign found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  player_num:
+                    type: integer
+                  themes:
+                    type: array
+                    items:
+                      type: string
+                required:
+                - id
+                - name
+                - player_num
+                - themes
+        '404':
+          description: campaign not found
+  "/api/v1/users/:user_id/campaigns/:campaign_id/towns":
+    post:
+      summary: Creates a Town
+      tags:
+      - Town
+      parameters: []
+      responses:
+        '200':
+          description: town created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                leadership:
+                  type: string
+                taverns:
+                  type: string
+                shops:
+                  type: string
+              required:
+              - name
+              - description
+              - leadership
+              - taverns
+              - shops
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
