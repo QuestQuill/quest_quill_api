@@ -48,12 +48,16 @@ paths:
               schema:
                 type: object
                 properties:
+                  id:
+                    type: integer
                   name:
                     type: string
                   player_num:
                     type: integer
                   themes:
-                    type: string
+                    type: array
+                    items:
+                      type: string
                 required:
                 - id
                 - name
@@ -61,8 +65,6 @@ paths:
                 - themes
         '404':
           description: campaign not found
-        '406':
-          description: unsupported accept header
   "/api/v1/users/:user_id/campaigns/:campaign_id/towns":
     post:
       summary: Creates a Town
