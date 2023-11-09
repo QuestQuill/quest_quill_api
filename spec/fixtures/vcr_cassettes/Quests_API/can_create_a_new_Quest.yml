@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 07 Nov 2023 00:41:59 GMT
+      - Wed, 08 Nov 2023 23:10:29 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -41,7 +41,7 @@ http_interactions:
       Openai-Organization:
       - user-a2zw6rfoualiqgcougwcfbw9
       Openai-Processing-Ms:
-      - '29755'
+      - '20400'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -59,38 +59,42 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 227ms
       X-Request-Id:
-      - 24e52c2f97f481c552443526087de100
+      - 7334cf1b5842c68444eee7eb0cc3ce31
       Cf-Cache-Status:
       - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=8RMbFrsrZLKFl4x9NqXAJ3Km0K8VdDOMnhbZSp8aRr0-1699485029-0-AZOpgR4BkgbaRLb3hNlcCCmtYHg8P8nYjaiVTLwNBSJiw9p/X+sXmPTlvS0Y94TwuYzAVId8ZdK2SUoCO0wwucY=;
+        path=/; expires=Wed, 08-Nov-23 23:40:29 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 822187ea8d9269db-DEN
+      - 82317cd5fdc82fd0-DFW
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-8I4RmeZSoxJwryrk3jRsn72njF1em",
+          "id": "chatcmpl-8IlyTSSrUSLN9Rj16OIKD1ECkSrax",
           "object": "chat.completion",
-          "created": 1699317690,
+          "created": 1699485009,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "Name: The Lost Crown of Eldoria\n\nDescription: Deep within the enchanted forests of Eldoria lies a hidden secret - the legendary Crown of Eldoria, a powerful artifact said to grant its wearer untold magical abilities. However, the crown has been lost for centuries, its location known only to a forgotten guardian spirit. The time has come for a brave adventurer to embark on a perilous quest to retrieve the crown and fulfill their destiny.\n\nGoal: Your mission is to navigate the treacherous paths of Eldoria, braving dangerous creatures and solving ancient riddles, in order to reach the heart of the enchanted forest. Once there, you must find and gain the trust of the guardian spirit, who holds the key to the location of the lost crown. Only by proving your worth and protecting the sacred balance of Eldoria will you be granted the knowledge to find the fabled artifact and restore peace to the land."
+                "content": "Name: The Lost Key\n\nDescription: The Lost Key is a fantasy quest set in the mystical land of Zephyria. Long ago, an ancient artifact known as the Key of Shadows was hidden away to protect the balance between light and darkness. However, a dark sorcerer has stolen the key, plunging the land into chaos.\n\nGoal: Your mission is to retrieve the Lost Key and restore harmony to Zephyria. Along your journey, you will encounter treacherous dungeons, mysterious creatures, and powerful spells. You must outsmart the sorcerer's minions, solve intricate puzzles, and gather a band of loyal allies to aid you in your quest. Only by reclaiming the key can you bring peace back to the land and vanquish the darkness that has taken hold."
               },
               "finish_reason": "stop"
             }
           ],
           "usage": {
             "prompt_tokens": 40,
-            "completion_tokens": 184,
-            "total_tokens": 224
+            "completion_tokens": 157,
+            "total_tokens": 197
           }
         }
-  recorded_at: Tue, 07 Nov 2023 00:41:59 GMT
+  recorded_at: Wed, 08 Nov 2023 23:09:28 GMT
 recorded_with: VCR 6.2.0

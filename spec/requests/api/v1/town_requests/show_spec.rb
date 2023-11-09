@@ -12,13 +12,13 @@ RSpec.describe "Towns API" do
 
     town = JSON.parse(response.body)
 
-    expect(town['id']).to be_a(Integer)
-    expect(town).to be_a(Hash)
+    expect(town['data']['id']).to eq(@town1.id.to_s)
+    expect(town['data']['type']).to eq('town')
 
-    expect(town['name']).to eq('Dimsdale')
-    expect(town['description']).to eq("A quaint little town...")
-    expect(town['leadership']).to eq("The mayor of Dimsdale")
-    expect(town['taverns']).to eq("the armoured duck")
-    expect(town['shops']).to eq("A hair solon")
+    expect(town['data']['attributes']['name']).to eq('Dimsdale')
+    expect(town['data']['attributes']['description']).to eq("A quaint little town...")
+    expect(town['data']['attributes']['leadership']).to eq("The mayor of Dimsdale")
+    expect(town['data']['attributes']['taverns']).to eq("the armoured duck")
+    expect(town['data']['attributes']['shops']).to eq("A hair solon")
   end
 end

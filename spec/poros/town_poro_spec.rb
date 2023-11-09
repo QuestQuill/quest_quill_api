@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe NpcPoro do
+RSpec.describe TownPoro do
   describe 'Town Poro' do
     let(:town_data) do
       "Name: Example Town

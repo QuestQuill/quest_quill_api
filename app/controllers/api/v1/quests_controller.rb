@@ -1,10 +1,10 @@
 class Api::V1::QuestsController < ApplicationController
     def index
-      render json: Quest.all
+      render json: QuestSerializer.new(Quest.all)
     end
   
     def show
-      render json: Quest.find(params[:id])
+      render json: QuestSerializer.new(Quest.find(params[:id]))
     end
   
     def create
@@ -16,6 +16,27 @@ class Api::V1::QuestsController < ApplicationController
         campaign_id: params[:campaign_id]
       }
   
-      render json: Quest.create(quest_data)
+      render json: QuestSerializer.new(Quest.create(quest_data))
+    end
+
+    def update
+      quest = Quest.find(params[:id])
+      if quest.update(quest_params)
+        render json: QuestSerializer.new(quest)
+      else
+        render json: { errors: quest.errors.full_messages }, status: :unprocessable_entity
+      end
+    end
+  
+    def upload_photo
+      quest = Quest.find(params[:id])
+      quest.quest_photo.attach(params[:quest_photo])
+      render json: QuestSerializer.new(quest)
+    end
+  
+    private
+  
+    def quest_params
+      params.permit(:name, :description, :goal, :quest_photo)
     end
   end
