@@ -6,12 +6,7 @@ class Api::V1::CampaignsController < ApplicationController
   end
 
   def show
-    begin
-      campaign = Campaign.find(params[:id])
-      render json: campaign
-    rescue ActiveRecord::RecordNotFound
-      render status: 404
-    end
+    render json: CampaignSerializer.new(Campaign.find(params[:id]))
   end
 
 
