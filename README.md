@@ -41,3 +41,6 @@ When branching on this repo please use the conventions of `sprint#_name_feature`
 - Dylan Timmons | [GitHub](https://github.com/DylanScotty) | [LinkedIn](https://www.linkedin.com/in/dylan-timmons/)
 - John O'Leary | [GitHub](https://github.com/Captainlearyo) | [LinkedIn](https://www.linkedin.com/in/john-clay-oleary/)
 - Noelle Hemphill | [GitHub](https://github.com/lofi-nowhale) | [LinkedIn](https://www.linkedin.com/in/noelle-hemphill/)
+
+## API Documentation 
+[API Documentation](API_Documentation.md)
