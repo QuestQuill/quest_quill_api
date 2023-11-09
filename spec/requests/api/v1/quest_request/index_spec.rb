@@ -11,7 +11,7 @@ RSpec.describe "Quests API" do
     expect(response).to be_successful
 
     json_response = JSON.parse(response.body)
-    quests = Quest.all
+    quests = @campaign1.quests
 
     expect(json_response['data']).to be_a(Array)
     expect(json_response['data'].size).to eq(quests.size)

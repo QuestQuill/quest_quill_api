@@ -1,6 +1,8 @@
 class Api::V1::CampaignsController < ApplicationController
   def index
-    render json: CampaignSerializer.new(Campaign.all)
+    user = User.find(params[:user_id])
+    campaigns = user.campaigns
+    render json: CampaignSerializer.new(campaigns)
   end
 
   def show

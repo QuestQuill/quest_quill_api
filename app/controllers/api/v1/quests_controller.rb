@@ -1,6 +1,8 @@
 class Api::V1::QuestsController < ApplicationController
     def index
-      render json: QuestSerializer.new(Quest.all)
+      campaign = Campaign.find(params[:campaign_id])
+      quests = campaign.quests
+      render json: QuestSerializer.new(quests)
     end
   
     def show

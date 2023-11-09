@@ -1,6 +1,8 @@
 class Api::V1::NpcsController < ApplicationController
     def index
-        render json: NpcSerializer.new(Npc.all)
+        campaign = Campaign.find(params[:campaign_id])
+        npcs = campaign.npcs
+        render json: NpcSerializer.new(npcs)
     end
 
     def show

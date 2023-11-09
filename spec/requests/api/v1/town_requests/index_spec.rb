@@ -11,7 +11,7 @@ RSpec.describe "Towns API" do
     expect(response).to be_successful
 
     json_response = JSON.parse(response.body)
-    towns = Town.all
+    towns = @campaign1.towns
 
     expect(json_response['data']).to be_a(Array)
     expect(json_response['data'].size).to eq(towns.size) 
