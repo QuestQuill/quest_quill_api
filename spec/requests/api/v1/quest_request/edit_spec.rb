@@ -33,4 +33,19 @@ RSpec.describe "Edit a Quest" do
 
     expect(@quest1.quest_photo).to be_attached
   end
+
+  it 'Sad Path edit with bad info' do
+    previous_name = @quest1.name
+    quest_params = ({ name: ''})
+    headers = { "CONTENT_TYPE" => "application/json" }
+  
+    patch "/api/v1/users/#{@user1.id}/campaigns/#{@campaign1.id}/quests/#{@quest1.id}", headers: headers, params: JSON.generate(quest_params)
+  
+    expect(response).to have_http_status(:unprocessable_entity)
+    @quest1.reload
+  
+    expect(previous_name).to eq("Rescue the Lost Heir") 
+    expect(@quest1.name).to eq(previous_name)
+  end
+  
 end
