@@ -9,7 +9,6 @@ RSpec.describe 'Update a campaign' do
     previous_name = @campaign1.name
     campaign_params = ({ 
                     name: "Coolest Campaign Ever!!",
-                    themes: ["Awesome", "Cool"],
                     player_num: 4
     })
     headers = {"CONTENT_TYPE" => "application/json"}

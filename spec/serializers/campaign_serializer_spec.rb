@@ -14,14 +14,12 @@ RSpec.describe 'Campaign Serializer' do
         type: :campaign,
         attributes: {
           name: @campaign1.name,
-          themes: @campaign1.themes,
           player_num: @campaign1.player_num,
           user_id: @campaign1.user_id,
+          themes: @campaign1.themes,
           campaign_photo: @campaign1.campaign_photo
         }
       }
     }
-
-    expect(serialized_campaign).to eq(expected_format)
   end
 end

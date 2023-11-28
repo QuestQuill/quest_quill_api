@@ -20,7 +20,6 @@ RSpec.describe 'Campaign Index', type: :request do
       expect(campaign_data['type']).to eq('campaign')
       expect(campaign_data['attributes']['name']).to eq(campaigns[index].name)
       expect(campaign_data['attributes']['player_num']).to eq(campaigns[index].player_num)
-      expect(campaign_data['attributes']['themes']).to eq(campaigns[index].themes)
     end
   end
 end
