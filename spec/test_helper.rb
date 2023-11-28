@@ -10,12 +10,12 @@ def load_test_data
     @campaign3 = @user3.campaigns.create(name: "Campaign 3",player_num: 4)
 
   # Themes
-    theme1 = @campaign1.themes.create(name: "Fantasy")
-    theme2 = @campaign1.themes.create(name: "High Magic")
-    theme3 = @campaign2.themes.create(name: "Sci Fi")
-    theme4 = @campaign2.themes.create(name: "Space Opera")
-    theme5 = @campaign3.themes.create(name: "Low Magic")
-    theme6 = @campaign3.themes.create(name: "Slice of Life")
+    @theme1 = Theme.create(name: "Fantasy")
+    @theme2 = Theme.create(name: "High Magic")
+    @theme3 = Theme.create(name: "Sci Fi")
+    @theme4 = Theme.create(name: "Space Opera")
+    @theme5 = Theme.create(name: "Low Magic")
+    @theme6 = Theme.create(name: "Slice of Life")
 
   # Towns
     @town1 = @campaign1.towns.create(name: "Dimsdale", description: "A quaint little town...", leadership: "The mayor of Dimsdale", shops: "A hair solon", taverns: "the armoured duck")
