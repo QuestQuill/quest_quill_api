@@ -6,7 +6,9 @@ RSpec.describe Campaign, type: :model do
     it { should have_many :towns }
     it { should have_many :npcs }
     it { should have_many :quests }
-    it { should have_many :themes }
+    it { should have_many :campaign_themes }
+    it { should have_many(:themes).through(:campaign_themes) }
+
   end
 
   describe "validations" do
