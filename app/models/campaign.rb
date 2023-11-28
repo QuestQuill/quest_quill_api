@@ -8,5 +8,6 @@ class Campaign < ApplicationRecord
   has_many :towns
   has_many :npcs
   has_many :quests
-  has_many :themes
+  has_many :campaign_themes
+  has_many :themes, through: :campaign_themes
 end
