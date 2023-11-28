@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_17_035132) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_17_054236) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_17_035132) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "campaign_themes", force: :cascade do |t|
+    t.bigint "campaign_id", null: false
+    t.bigint "theme_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_campaign_themes_on_campaign_id"
+    t.index ["theme_id"], name: "index_campaign_themes_on_theme_id"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -76,10 +85,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_17_035132) do
 
   create_table "themes", force: :cascade do |t|
     t.string "name"
-    t.bigint "campaign_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["campaign_id"], name: "index_themes_on_campaign_id"
   end
 
   create_table "towns", force: :cascade do |t|
@@ -108,9 +115,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_17_035132) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "campaign_themes", "campaigns"
+  add_foreign_key "campaign_themes", "themes"
   add_foreign_key "campaigns", "users"
   add_foreign_key "npcs", "campaigns"
   add_foreign_key "quests", "campaigns"
-  add_foreign_key "themes", "campaigns"
   add_foreign_key "towns", "campaigns"
 end
