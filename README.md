@@ -1,4 +1,4 @@
-# QuestQuill - Front End 
+# QuestQuill API
 ## About
 This app serves as a Dungeous and Dragons, Dungeon Master's Companion App and leverages the power of AI to create curated adventures for a DM and their party. 
 
@@ -24,17 +24,15 @@ When branching on this repo please use the conventions of `sprint#_name_feature`
 ## API Usage
 - This app uses:
   - [OpenAI API](https://platform.openai.com/)
-  - [D&D 5e SRD API](https://5e-bits.github.io/docs/) 
-## System dependencies
-
+  - [D&D 5e SRD API](https://5e-bits.github.io/docs/)
+    
 ## Configuration
+1. `bundle install`
+2. `rails db:{drop,create,migrate,seed}`
 
-## Database creation
-## Database initialization
 ## How to run the test suite
-## Services (job queues, cache servers, search engines, etc.)
-## Deployment instructions
-## Challenges + Wins 
+Run `bundle exec rspec`
+
 ## Contributors 
 - Ethan Van Gorkom | [GitHub](https://github.com/EVanGorkom) | [LinkedIn](https://www.linkedin.com/in/evangorkom/)
 - Eliza Keating | [GitHub](https://github.com/elizakeating) | [LinkedIn](https://www.linkedin.com/in/elizakeating/)
